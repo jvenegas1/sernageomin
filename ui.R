@@ -10,15 +10,15 @@ library(bs4Dash)
 library(waiter)
 library(dplyr)
 library(shinycssloaders)
-#library(argonDash)
-#library(argonR)
+library(argonDash)
+library(argonR)
 
 source("modulos/carga_modulos.R")
 
 bs4dash_status(primary = "#olive", danger = "#BF616A",)
 
 ui<-fluidPage(
-    
+    #useArgonDash(),
     bs4DashPage(fullscreen = TRUE,preloader = list(html = spin_1(), color = "#333e48"),dark = NULL,
         bs4DashNavbar(title=dashboardBrand(opacity = 1,
             title = "Sernageomin",color = "warning",
@@ -42,10 +42,10 @@ ui<-fluidPage(
             tabItems(
             #Modulos    
             MODIS_UI("modis"),
-            CALVAL_UI("calval")
+            CALVAL_UI("calval"),
+            SOPORTE_UI("soporte")
             
         ))))
-
 
 
 
